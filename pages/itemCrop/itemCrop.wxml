@@ -1,0 +1,274 @@
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="containsViewBottom">
+  <view animation="{{animationData}}" class="container-column buydes-dialog-container" wx:if="{{showModalStatus}}">
+    <view class="buydes-dialog-container-top" bindtap="hideModal"></view>
+    <view class="container-column buydes-dialog-container-bottom">
+      <block wx:for="{{Telephone}}" wx:for-index="index" wx:key="key" id="{{item}}" wx:for-item="item">
+        <view id='{{item}}' bindtap="hideModal" class="buydes-dialog-container-bottom-item" bindtap="onclickTel">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+  <view class="divLine"></view>
+  <!--品种信息-->
+  <view class="crop_info" hidden="{{currentTab!==0}}">
+    <view class="containsView">
+      <view bindtap='showCropImgs' id="{{imgs[0]}}" class="crop_info_content" style="background-image:url({{imgs[0]}})">
+        <image wx:if="{{data.CropStatus=='2'}}" class='statu_img' src='/images/statu_dengji.png'></image>
+        <image wx:if="{{data.CropStatus=='1'}}" class='statu_img' src='/images/statu_shenhe.png'></image>
+      </view>
+      <view class="item_menu">
+        <view class="item_left">
+          <view class="left_v"></view>
+          <text class="item_title" class="item_text text_name">品种信息</text>
+        </view>
+
+        <text id="1" class="item_more" wx:if="{{data.statu=='已审定已登记'||data.statu=='已登记'}}" bindtap="dengjiXX">登记信息</text>
+      </view>
+
+      <view class="crop_info_item">
+        <view class="text_pro_name">
+          <view class="en_name">
+            <image wx:if="{{data.CropVipStatus!=0}}" class='crop_status_img' src='/images/lgz.gif'></image>
+            <text class="text_name">{{data.VarietyName}}</text>
+          </view>
+
+          <template is="rating-template" data="{{data}}" />
+          <text wx:if="{{data.CropStatus=='1'}}">已审定</text>
+          <text wx:if="{{data.CropStatus=='2'}}">已登记</text>
+        </view>
+        <view class="divLine"></view>
+        <view class="qrcode_menu" id="{{qrcode_url}}" bindtap='onclickQRcode'>
+          <view class="qrcode_v">
+            <text class="qrcode_title">品种名片</text>
+            <text class="qrcode_lint">(点击查看大图)</text>
+          </view>
+          <image class='qrcode_img' src="{{qrcode_url}}"></image>
+        </view>
+        <view class="divLine"></view>
+        <view wx:if="{{data.pro}}" class="text_pro_content_1">
+          <text style="margin-top:10rpx;">适宜</text>
+          <image class="loc_img" style="margin-top:10rpx;" src="../../images/loc.png"></image>
+          <text style="margin-top:10rpx;" class="text_pro">{{data.pro}}</text>
+          <text style="margin-top:10rpx;">种植</text>
+        </view>
+        <text class="crop_content" style="margin-top:10rpx;">{{data.CropCategoryName1}} {{data.CropCategoryName2}} {{data.Memo}}</text>
+        <text class="crop_content" style="margin-top:10rpx;">转基因：{{data.IsGen}}</text>
+        <text class="crop_content" style="margin-top:10rpx;">育种：{{data.BreedOrganization}}</text>
+        <text class="crop_content" style="margin-top:10rpx;">简介：{{data.BreedRegion}}</text>
+
+
+
+        <!--<text class="crop_content"></text>-->
+        <!--<text wx:if="{{data.MinGuidePrice}}" class="crop_content">{{data.MinGuidePrice}}-{{data.MaxGuidePrice}}</text>-->
+        <!--<text class="crop_region" style="margin-top:10rpx;">{{data.Region}}</text>-->
+        <!--<text wx:for="{{data.BreedRegion}}" class="crop_content"> {{data.BreedRegion}}</text>-->
+      </view>
+      <view class="divLine"></view>
+      <view class="item_menu" wx:if="{{BrandList.length!=0}}">
+        <view class="item_left">
+          <view class="left_v"></view>
+          <text class="item_title" class="item_text text_name">推荐品牌   (点击拨打电话)</text>
+        </view>
+      </view>
+      <view wx:for="{{BrandList}}" class="authorize_item">
+        <view class="condition_brand_view" id="{{item.EnterpriseTelephone}}" bindtap='showModal'>
+          <view class="au_class" id="{{item.EnterpriseId}}">
+            <!-- <view class="au_class" id="{{item.EnterpriseId}}" bindtap="onclickBrand"> -->
+            <image class="brand_avatar" src="{{constUrl}}files/brandImgs/{{item.BrandImg}}" mode="aspectFill"></image>
+            <text class="text_name">【{{item.BrandName}}】</text>
+            <text>{{item.EnterpriseName}}</text>
+          </view>
+          <!-- <text id="1" class="text_arrow">></text> -->
+        </view>
+
+      </view>
+
+      <view>
+        <!--<view class="divLine" style="margin-top:20rpx;"></view>-->
+        <view class="item_menu">
+          <view class="item_left">
+            <view class="left_v"></view>
+            <text class="item_title" class="item_text text_name">种友点评</text>
+          </view>
+          <text id="1" class="item_more" bindtap="sendKoubei">写点评</text>
+        </view>
+        <view class="divLine"></view>
+        <!--<view class="divLine_1"></view>-->
+        <!--<view id="{{item.CommentRecrodId}}" wx:for="{{koubeiList}}" bindtap="onclickKoubeiList" wx:key="CommentRecrodId" class="authorize_item">-->
+        <view id="{{item.CommentRecrodId}}" wx:for="{{koubeiMainList}}" wx:key="CommentRecrodId" class="authorize_item">
+          <view class="item_view">
+            <image class="item_avatar" src="{{item.UserAvatar}}" mode="aspectFill"></image>
+            <view class="item_content">
+              <view class="item_view" style="margin-left:10rpx;">
+                <text class="user_name">{{item.UserName}}</text>
+                <template is="rating-template" data="{{item}}" />
+              </view>
+              <view class="comment_content" style="margin-left:10rpx;">{{item.CommentRecordCreateTime}}</view>
+              <view class="comment_content" style="margin-left:10rpx;">{{item.CommentComment}}</view>
+              <view class="item_img_view">
+                <view wx:for="{{item.CommentImgs}}" wx:key="{{item}}">
+                  <image id="{{constUrl}}files/upload/{{item}}" bindtap="onclickImg" class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files/upload/{{item}}" mode="aspectFill"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+
+        </view>
+      </view>
+      <view style="text-align:center;margin-top: 10rpx;margin-bottom:10rpx;">
+        <view wx:if="{{koubeiList.length>0}}">
+          <text style="color: #056bb8;" bindtap="show_more">查看更多点评</text>
+        </view>
+        <view wx:else>
+          <text style="color: #056bb8;" bindtap="sendKoubei">暂无点评,发一条</text>
+        </view>
+      </view>
+      <view>
+        <view class="divLine" style="margin-top:20rpx;"></view>
+        <view class="item_menu">
+          <view class="item_left">
+            <view class="left_v"></view>
+            <text class="item_title" class="item_text text_name">审定/登记信息</text>
+          </view>
+          <text id="1" class="item_more"></text>
+        </view>
+        <!--<view class="divLine"></view>-->
+        <!--<view class="divLine_1"></view>-->
+        <view id="{{item.AuthorizeId}}" wx:for="{{authorize}}" bindtap="onclickList" wx:key="AuthorizeId" class="authorize_item">
+          <view id="1" class="condition_view">
+            <view class="au_class">
+              <text class="text_name">【{{item.areaname}}】</text>
+              <text>{{item.AuthorizeNumber}}</text>
+            </view>
+            <text id="1" class="text_arrow">></text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <button class="bottom_button" bindtap="sendKoubei">写点评</button>
+  </view>
+  <!--点评列表-->
+  <view class="crop_info " hidden="{{currentTab!==1}}">
+    <view class="containsView">
+      <view class="item_menu">
+        <view class="item_left">
+          <view class="left_v"></view>
+          <text class="item_title" class="item_text">种友点评</text>
+        </view>
+        <text id="1" class="item_more" bindtap="sendKoubei">写点评</text>
+      </view>
+      <view class="divLine"></view>
+      <scroll-view scroll-y="true">
+        <view id="{{item.CommentRecrodId}}" wx:for="{{koubeiList}}" wx:key="CommentRecrodId" class="authorize_item">
+          <view class="item_view">
+            <image class="item_image" style="height: 30px;width:30px;vertical-align: middle;border-radius: 100rpx;" src="{{item.UserAvatar}}"></image>
+            <view class="item_content">
+              <view class="item_view" style="margin-left:10rpx;">
+                <text class="user_name">{{item.UserName}}</text>
+                <template is="rating-template" data="{{item}}" />
+              </view>
+              <view class="comment_content" style="margin-left:10rpx;">{{item.CommentRecordCreateTime}}</view>
+              <view class="comment_content" style="margin-left:10rpx;">{{item.CommentComment}}</view>
+              <view class="item_img_view">
+                <view wx:for="{{item.CommentImgs}}" wx:key="{{item}}">
+                  <image id="{{constUrl}}files/upload/{{item}}" bindtap="onclickImg" class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files/upload/{{item}}" mode="aspectFill"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="loading" hidden="{{!koubei_searchLoading}}">加载更多</view>
+        <view class="loading complete" hidden="{{!koubei_searchLoadingComplete}}">已加载全部</view>
+      </scroll-view>
+    </view>
+    <button class="bottom_button" bindtap="sendKoubei">写点评</button>
+  </view>
+  <!--文章列表-->
+  <view class="company_info" hidden="{{currentTab!==2}}">
+    <scroll-view scroll-y="true">
+      <view id="{{item.ArticleId}}" class="item" wx:for="{{articleList}}">
+        <view wx:if="{{item.ArticleVideo}}" class="item_content_video">
+          <text bindtap="onclickArticleList" class="text_title" id="{{item.ArticleId}}">{{item.ArticleTitle}}</text>
+          <video class="video_class" wx:if="{{item.ArticleVideo}}" src='{{item.ArticleVideo}}' objectFit='fill' poster='https://www.renrenseed.com{item.ArticleVideoPosterUrl}}' controls='true'></video>
+          <text class="time" id="{{item.ArticleId}}" bindtap="onclickArticleList">{{item.ArticleCreateTime}}</text>
+          <view class="divLine" style="margin-top:20rpx;"></view>
+        </view>
+        <view wx:else>
+          <view class="item_content">
+            <image id="{{item.ArticleId}}" bindtap="onclickArticleList" class="avatar" src="https://www.renrenseed.com{{item.ArticleCover}}"></image>
+            <view id="{{item.ArticleId}}" class="item_content_1">
+              <view class="content">
+                <text class="text_title" id="{{item.ArticleId}}" bindtap="onclickArticleList">{{item.ArticleTitle}}</text>
+                <text class="time" id="{{item.ArticleId}}" bindtap="onclickArticleList">{{item.ArticleCreateTime}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="divLine" style="margin-top:20rpx;"></view>
+        </view>
+      </view>
+      <view class="loading" hidden="{{!searchLoading}}">加载更多</view>
+      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+    </scroll-view>
+  </view>
+  <!--经销商列表-->
+  <view class="company_info containsView" hidden="{{currentTab!==3}}">
+
+    <view wx:for="{{enterpriseList}}" wx:if="{{(item.EnterpriseLevel!=0||item.EnterpriseLevel==isshow)||novip==0}}" wx:key="EnterpriseId" class="item_company_content">
+      <view class="item_company">
+        <view class="v_left">
+          <view class="en_name">
+            <image wx:if="{{item.EnterpriseLevel!=0}}" class='enterprise_status_img' src='/images/lgz.gif'></image>
+            <text bindtap='onclickDisList' class="text_name" id="{{item.EnterpriseId}}"> [企业]</text>
+            <text bindtap='onclickDisList' class="en_name" id="{{item.EnterpriseId}}">{{item.EnterpriseName}}</text>
+          </view>
+
+          <view class="brand_content">
+            <image id="{{item.BrandImgMin}}" class="brand_avatar" src="{{constUrl}}files/brandImgs/{{item.BrandImgMin}}"></image>
+            {{item.BrandName_1}} {{data.VarietyName}} </view>
+          <text class="address_class" style="margin-top:10rpx;">{{item.EnterpriseProvince}}{{item.EnterpriseCity}}{{item.EnterpriseZone}}{{item.EnterpriseAddressDetail}}</text>
+        </view>
+        <view class="v_right">
+          <view id="{{item.EnterpriseTelephone}}" class="call_view" bindtap="showModal">
+            <image id="{{item.EnterpriseTelephone}}" class="call" src="../../images/call.png"></image>
+          </view>
+        </view>
+        <!-- <text id="{{item.EnterpriseTelephone}}" class="text_call">{{item.EnterpriseTelephone}}</text> -->
+      </view>
+      <view class="item_img_view">
+        <view wx:for="{{item.CommodityImgsMin}}" wx:key="{{item}}">
+          <image id="{{constUrl}}files/commodityImgs/{{item}}" bindtap="onclickImg" class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files/commodityImgs/{{item}}" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="divLine" style="margin-top:20rpx;"></view>
+    </view>
+    <view style="text-align:center;margin-top: 10rpx;margin-bottom:10rpx;" wx:if="{{novip==1}}">
+      <view wx:if="{{isshow==1}}">
+        <text style="color: #056bb8;" bindtap="VipShow">查看更多企商</text>
+      </view>
+      <view wx:else>
+        <text style="color: #056bb8;" bindtap="unVipShow">显示推荐</text>
+      </view>
+    </view>
+    <view id=" {{item.DistributorId}} " wx:for="{{distributorList}}" wx:key="DistributorId" class="item_company">
+      <text class="text_name">[经销商]{{item.DistributorName}}</text>
+      <text style="margin-top:10rpx;">{{item.DistributorProvince}} {{item.DistributorZone}} {{item.DistributorZone}}{{item.DistributorAddressDetail}}</text>
+      <text class="brand_content">{{item.BrandName_1}} {{data.VarietyName}} </text>
+      <view id="{{item.DistributorTelephone}}" class="call_view" bindtap="callThis">
+        <image id="{{item.DistributorTelephone}}" class="call" src="../../images/call.png"></image>
+        <text id="{{item.DistributorTelephone}}" class="text_call">拨打电话</text>
+        <text id="{{item.DistributorTelephone}}" class="text_call">{{item.DistributorTelephone}}</text>
+      </view>
+      <view class="divLine" style="margin-top:20rpx;"></view>
+    </view>
+  </view>
+  <!--品种图库  -->
+  <view class="image_class" hidden="{{currentTab!==4}}">
+    <view id="{{item}}" wx:for="{{photos}}" bindtap="showItemCropImgs">
+      <image class='item_image' src="{{item}}"></image>
+    </view>
+  </view>
+</view>

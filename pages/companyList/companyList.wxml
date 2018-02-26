@@ -1,0 +1,41 @@
+<!--pages/companyList/companyList.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="top_loading"></view>
+<view class="wxSearch-pancel_1">
+  <view class="reset_location" bindtap="resetLocation">
+    <image class="loc_img_top" src="../../images/loc_top.png"></image>
+    <text class="location_city">{{loaction_city}}</text>
+  </view>
+  <button class="wxSearch-comm" bindtap="search" placeholder="搜索">搜企业</button>
+</view>
+<view class="containsView">
+  <scroll-view scroll-y="true">
+    <view id="{{item.EnterpriseId}}" class="item" wx:for="{{list}}" bindtap="onclickList">
+      <view class="item_content">
+          <image class="avatar" src="{{constUrl}}/wxApi/getEnterpriseAvatar.php?id={{item.EnterpriseId}}"></image>
+        <view class="item_content_1">
+          <view class="content">
+            <view class="en_name">
+              <image wx:if="{{item.EnterpriseLevel!=0}}" class='enterprise_status_img' src='/images/lgz.gif'></image>
+              <text class="en_name" id="{{item.EnterpriseId}}">{{item.EnterpriseName}}</text>
+            </view>
+            <view class="rat_view_left">
+              <template is="rating-template" data="{{item}}" />
+            </view>
+            <text class="address_class" id="{{item.DistributorId}}">{{item.EnterpriseProvince}}{{item.EnterpriseAddressDetail}}</text>
+          </view>
+          <!-- <view class='item_right'>
+            <image class="call" id="{{item.EnterpriseTelephone}}" src="../../images/call.png" bindtap="makeCall"></image>
+            <text style="margin-right:10rpx;margin-top:5rpx;" id="{{item.DistributorId}}" >{{item.distanceKM}}</text>
+          </view> -->
+        </view>
+      </view>
+      <view class="divLine" style="margin-top:20rpx;"></view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">加载更多</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+  </scroll-view>
+</view>
+<modal hidden="{{addresshidden}}" title="位置切换" confirm-text="立即更换" cancel-text="暂不更换" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+  {{qiehuandata}}
+</modal>

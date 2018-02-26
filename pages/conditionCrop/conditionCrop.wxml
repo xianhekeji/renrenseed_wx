@@ -1,0 +1,79 @@
+<view class="containsViewNopadding">
+  <view class="item_menu">
+    <view class="item_left">
+      <text class="item_title item_text">全部条件</text>
+    </view>
+    <text id="1" class="item_more" bindtap="resetCondition">重置</text>
+  </view>
+  <view class="condition_title">
+    审定/登记</view>
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item}}" wx:for="{{CropStatus}}" class="listview" bindtap="onclickStatusList">
+      <view class="{{checkStatus==item?'item_class_checked':'item_class'}}">
+        <text class="condition_text">{{item}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_big"></view>
+  <view class="picker_view">
+    审定省份：
+    <picker bindchange="bindRegionProPickerChange" value="{{RegionProDataIndex}}" range="{{RegionProData}}">
+      <view class="picker">
+        {{RegionProData[RegionProDataIndex]}}
+      </view>
+    </picker>
+    <text id="1" class="text_arrow">></text>
+  </view>
+  <view class="divLine_big"></view>
+  <view class="picker_view">
+    适宜地区：
+    <picker bindchange="bindAddressPickerChange" value="{{AddressDataIndex}}" range="{{AddressData}}">
+      <view class="picker">
+        {{AddressData[AddressDataIndex]}}
+      </view>
+    </picker>
+    <text id="1" class="text_arrow">></text>
+  </view>
+  <view class="divLine_big"></view>
+
+  <view class="condition_title">
+    作物大类</view>
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.varietyid}}" wx:for="{{ClassData}}" class="listview" bindtap="onclickClassList">
+      <view class="{{checkClassid==item.varietyid?'item_class_checked':'item_class'}}">
+        <text class="condition_text">{{item.varietyname}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_big"></view>
+  <view class="picker_view">
+    作物种类：
+    <picker bindchange="bindClass2PickerChange" value="{{Class2DataIndex}}" range="{{Class2Data}}">
+      <view class="picker">
+        {{Class2Data[Class2DataIndex]}}
+      </view>
+    </picker>
+    <text id="1" class="text_arrow">></text>
+  </view>
+  <view class="condition_title">
+    审定年份</view>
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.AuthorizeYear}}" wx:for="{{YearData}}" class="listview" bindtap="onclickYearList">
+      <view class="{{checkYear==item.AuthorizeYear?'item_class_checked':'item_class'}}">
+        <text class="condition_text">{{item.AuthorizeYear}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_big"></view>
+  <view class="condition_title">
+    转基因</view>
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item}}" wx:for="{{GenData}}" class="listview" bindtap="onclickGenList">
+      <view class="{{checkGen==item?'item_class_checked':'item_class'}}">
+        <text class="condition_text">{{item}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="bottom_view"></view>
+  <button class="bottom_button" bindtap="menu_search">查找</button>
+</view>

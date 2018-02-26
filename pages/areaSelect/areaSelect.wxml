@@ -1,0 +1,30 @@
+<!--pages/areaSelect/areaSelect.wxml-->
+<view class='v_gps'>
+  <text id="{{loaction_city}}" class='loc_province' bindtap="onclickList">{{loaction_city}}</text>
+  <text class='loc_lint'>GPS定位</text>
+  <text hidden="{{hidden}}" class='loc_lint' bindtap='reset'>定位失败点击重新定位</text>
+</view>
+<!-- <view class='v_log'>
+  <text class='all_lint'>历史访问</text>
+  <view class='v_log_content'></view>
+</view>
+<view class='v_all_province'>
+  <text class='all_lint'>热门省份</text>
+  <view class='v_all_content'>
+    <view id="{{item.areaname}}" wx:for="{{hotProvinceList}}" class="listview" bindtap="onclickList">
+      <view class='item_province'>
+        <text>{{item.areaname}}</text>
+      </view>
+    </view>
+  </view>
+</view> -->
+<view class='v_all_province'>
+  <text class='all_lint'>所有省份</text>
+  <view class='v_all_content'>
+    <view id="{{item.areaname}}" wx:for="{{allProvinceList}}" class="listview" bindtap="onclickList">
+      <view class='item_province'>
+        <text>{{item.areaname}}</text>
+      </view>
+    </view>
+  </view>
+</view>

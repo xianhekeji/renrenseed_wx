@@ -1,0 +1,12 @@
+/* pages/companyIntroduce/companyIntroduce.wxss */
+@import "/wxParse/wxParse.wxss";
+
+.content {
+  margin-top: 20rpx;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  align-content: center;
+}

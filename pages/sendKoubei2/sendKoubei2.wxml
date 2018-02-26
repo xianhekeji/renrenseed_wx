@@ -1,0 +1,40 @@
+<!--sendKoubei2.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="containsView">
+  <view class="item_view">
+    <image class="item_image" style="height: 30px;width:30px;vertical-align: middle;border-radius: 100rpx;" src="{{data.UserAvatar}}"></image>
+    <view class="item_content">
+      <view class="item_view" style="margin-left:10rpx;">
+        <text class="user_name">{{data.UserName}}</text>
+        <template is="rating-template" data="{{data}}" />
+      </view>
+      <view class="comment_content" style="margin-left:10rpx;">{{data.CommentRecordCreateTime}}</view>
+      <view class="comment_content" style="margin-left:10rpx;">{{data.CommentComment}}</view>
+      <view class="item_img_view">
+        <view wx:for="{{data.CommentImgs}}" wx:key="{{item}}">
+          <image id="{{constUrl}}files/upload/{{item}}" bindtap="onclickImg" class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files/upload/{{item}}" mode="aspectFill"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--pinglun-list-->
+
+  <!--<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+    <view id="{{item.CommentRecrodId}}"class="item" wx:for="{{list}}">
+      <text class="content">{{item.CommendSecondComment}}</text>
+      <view class="divLine"></view>
+    </view>
+  </scroll-view>-->
+  <!--pinglun-->
+  <!--<form bindsubmit="formBindsubmit" bindreset="formReset">
+    <view class="wxInput-section">
+      <view class="wxInput-pancel">
+        <input class="wxInput-input" id="wxInputText" name="wxInputText" />
+        <!--<button class="wxInput-button" bindtap="wxInputFn" size="mini" plain="true" formType="submit" >发送</button>-->
+  <!--<button class="wxInput-button" id="wxInput-button" bindtap="wxInputFn" size="mini" plain="true" formType="submit" value="发送">发送</button>
+      </view>
+    </view>-->
+  <!--</form>-->
+  <!--<toast hidden="{{hiddenToast}}" duration="2000" bindchange="toastHidden">{{ToastText}}</toast>
+  </view>-->
+</view>

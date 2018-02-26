@@ -1,0 +1,56 @@
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<!--<view class="top_loading"></view>-->
+<view class="wxSearch-pancel_1">
+  <view class="reset_location" bindtap="resetLocation">
+    <image class="loc_img_top" src="../../images/loc_top.png"></image>
+    <text class="location_city">{{loaction_city}}</text>
+  </view>
+  <button class="wxSearch-comm" placeholder="搜索" bindtap="search">搜索</button>
+</view>
+<view class="containsView">
+  <scroll-view scroll-y="true">
+    <view id="{{item.CropId}}" wx:for="{{list}}" class="listview" bindtap="onclickList">
+      <view class="item_content">
+        <!-- <image class="image" src="{{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}}"></image> -->
+        <view class="image" style="background-image:url({{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}})">
+          <image wx:if="{{item.CropStatus=='2'}}" class='statu_img' src='/images/statu_dengji.png'></image>
+          <image wx:if="{{item.CropStatus=='1'}}" class='statu_img' src='/images/statu_shenhe.png'></image>
+        </view>
+
+
+
+
+        <view class="text_content">
+          <view class="en_name">
+            <image wx:if="{{item.CropVipStatus!=0}}" class='crop_status_img' src='/images/lgz.gif'></image>
+            <text class="text_name">{{item.VarietyName}}</text>
+          </view>
+          <view class="item_content">
+            <template is="rating-template" data="{{item}}" />
+            <text class="text" style="margin-left:10rpx;">{{item.Comment}}条</text>
+          </view>
+          <view class="item_content">
+            <text class="text" style="margin-top:5rpx;">{{item.category_1}} {{item.category_2}}</text>
+            <text wx:if="{{item.Memo}}">({{item.Memo}})</text>
+          </view>
+          <text class="text">{{item.IsGen}}</text>
+          <view wx:if="{{item.pro}}" class="text_pro_content">
+            <text>适宜</text>
+            <image class="loc_img" src="../../images/loc.png"></image>
+            <text class="text_pro">{{item.pro}}</text>
+            <text>种植</text>
+          </view>
+        </view>
+      </view>
+      <view class="divLine" style="wigth:100%;margin-top:10rpx;"></view>
+    </view>
+
+    <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+
+  </scroll-view>
+</view>
+<loading hidden="{{hiddenLoading}}">正在加载</loading>
+<modal hidden="{{addresshidden}}" title="位置切换" confirm-text="立即更换" cancel-text="暂不更换" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+  {{qiehuandata}}
+</modal>

@@ -1,0 +1,33 @@
+<!--pages/articleList/articleList.wxml-->
+
+<view class="containsView">
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>
+  <view class="divLine"></view>
+  <!--行业资讯-->
+  <!-- <view class="crop_info" hidden="{{currentTab!==0}}"> -->
+  <scroll-view scroll-y="true">
+    <view id="{{item.ArticleId}}" class="item" wx:for="{{list}}">
+      <view class="item_content">
+        <image id="{{item.ArticleId}}" bindtap="onclickList" class="avatar" src="https://www.renrenseed.com{{item.ArticleCover}}"></image>
+        <view id="{{item.ArticleId}}" class="item_content_1">
+          <view class="content">
+            <text class="text_name" id="{{item.ArticleId}}" bindtap="onclickList">{{item.ArticleTitle}}</text>
+            <text id="{{item.ArticleId}}" bindtap="onclickList">{{item.ArticleCreateTime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="divLine" style="margin-top:20rpx;"></view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">加载更多</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+  </scroll-view>
+  <!-- </view>
+  审定登记公告 -->
+  <!-- <view class="crop_info" hidden="{{currentTab!==1}}">
+  </view>
+  <!--品种相关-->
+  <!-- <view class="crop_info" hidden="{{currentTab!==2}}">
+  </view>  -->
+</view>

@@ -1,0 +1,30 @@
+/* pages/ArticleInfo/ArticleInfo.wxss */
+@import "/wxParse/wxParse.wxss";
+
+.containsView {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.content {
+  margin-top: 20rpx;
+}
+
+.title {
+  width: 100%;
+  text-align: left;
+  align-content: center;
+  font-size: 45rpx;
+  line-height: 60rpx;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.laiyuan {
+  color: #ababab;
+  margin-top: 10rpx;
+  font-size: 25rpx;
+}

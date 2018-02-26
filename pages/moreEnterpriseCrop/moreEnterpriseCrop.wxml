@@ -1,0 +1,50 @@
+<!--pages/moreEnterpriseCrop/moreEnterpriseCrop.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="condition">
+  <picker class="pciker_class" bindchange="bindPinpaiPickerChange" value="{{PinpaiDataIndex}}" range="{{PinpaiData}}">
+    <view class="picker">
+      {{PinpaiData[PinpaiDataIndex]}}
+    </view>
+  </picker>
+  <view class="jiange_line"></view>
+
+  <picker class="pciker_class" bindchange="bindLeibiePickerChange" value="{{LeibieDataIndex}}" range="{{LeibieData}}">
+    <view class="picker">
+      {{LeibieData[LeibieDataIndex]}}
+    </view>
+  </picker>
+  <view class="jiange_line"></view>
+
+  <picker class="pciker_class" bindchange="bindPaixuPickerChange" value="{{PaixuDataIndex}}" range="{{PaixuData}}">
+    <view class="picker">
+      {{PaixuData[PaixuDataIndex]}}
+    </view>
+  </picker>
+</view>
+<view class="containsViewBottom">
+  <scroll-view class="top_line" scroll-y="true">
+    <view id="{{item.CropId}}" wx:for="{{list}}" wx:key="id" class="authorize_item" bindtap="onclickList">
+      <view class="fenlei_view" wx:if="{{item.isshow}}">
+        <text class="class_text">{{item.category_2}}</text>
+      </view>
+      <view id="1" class="condition_brand_view">
+        <view class="au_class">
+          <image class="brand_avatar" src="{{constUrl}}files/brandImgs/{{item.BrandImg}}" mode="aspectFill"></image>
+          <text wx:if="{{item.BrandName}}" class="text_name">【{{item.BrandName}}】</text>
+          <text>{{item.category_2}} </text>
+          <text class="text_name">{{item.VarietyName}}</text>
+        </view>
+        <text id="1" class="text_arrow">></text>
+      </view>
+      <view class="item_img_view">
+        <view wx:for="{{item.CommodityImgsMin}}" wx:key="{{item}}">
+          <image id="{{constUrl}}files/commodityImgs/{{item}}" bindtap="onclickImg" class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files/commodityImgs/{{item}}" mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="divLine"></view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+  </scroll-view>
+</view>
+<loading hidden="{{hiddenLoading}}">正在加载</loading>

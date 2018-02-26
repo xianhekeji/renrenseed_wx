@@ -1,0 +1,39 @@
+<!--pages/articleListnew/articleListnew.wxml-->
+<view class="containsView">
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.id}}" class="item" bindtap="onclickClassList" wx:for="{{hot_list}}" class="listview">
+      <view wx:if="{{item.id==classid}}">
+        <text id="{{item.id}}" class="text_class_hover">{{item.name}}</text>
+        <view id="{{item.id}}" class="divLine_top"></view>
+      </view>
+      <view wx:else>
+        <text class="text_class" id="{{item.id}}" bindtap="onclickClassList">{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine"></view>
+  <scroll-view scroll-y="true">
+    <view id="{{item.ArticleId}}" class="item" wx:for="{{list}}">
+      <view wx:if="{{item.ArticleVideo}}" class="item_content_video">
+        <text bindtap="onclickList" class="text_title" id="{{item.ArticleId}}">{{item.ArticleTitle}}</text>
+        <video class="video_class" wx:if="{{item.ArticleVideo}}" src='{{item.ArticleVideo}}' objectFit='fill' poster='https://www.renrenseed.com{{item.ArticleVideoPosterUrl}}' controls='true'></video>
+        <text class="time" id="{{item.ArticleId}}" bindtap="onclickList">{{item.ArticleCreateTime}}</text>
+        <view class="divLine" style="margin-top:20rpx;"></view>
+      </view>
+      <view wx:else>
+        <view class="item_content">
+          <image id="{{item.ArticleId}}" bindtap="onclickList" class="avatar" src="https://www.renrenseed.com{{item.ArticleCover}}"></image>
+          <view id="{{item.ArticleId}}" class="item_content_1">
+            <view class="content">
+              <text class="text_title" id="{{item.ArticleId}}" bindtap="onclickList">{{item.ArticleTitle}}</text>
+              <text class="time" id="{{item.ArticleId}}" bindtap="onclickList">{{item.ArticleCreateTime}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="divLine" style="margin-top:20rpx;"></view>
+      </view>
+    </view>
+    <view class="loading" hidden="{{!searchLoading}}">加载更多</view>
+    <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+  </scroll-view>
+</view>

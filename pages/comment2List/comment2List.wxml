@@ -1,0 +1,22 @@
+<!--comment2List.wxml-->
+<!--itemNew.wxml-->
+<view class="containsView">
+  <!--pinglun-list-->
+  <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
+    <view id="{{item.CommentRecrodId}}"class="item" wx:for="{{list}}">
+      <text class="content">{{item.CommendSecondComment}}</text>
+      <view class="divLine"></view>
+    </view>
+  </scroll-view>
+  <!--pinglun-->
+  <form bindsubmit="formBindsubmit" bindreset="formReset">
+    <view class="wxInput-section">
+      <view class="wxInput-pancel">
+        <input class="wxInput-input" id="wxInputText" name="wxInputText" />
+        <!--<button class="wxInput-button" bindtap="wxInputFn" size="mini" plain="true" formType="submit" >发送</button>-->
+        <button class="wxInput-button" id="wxInput-button" bindtap="wxInputFn" size="mini" plain="true" formType="submit" value="发送">发送</button>
+      </view>
+    </view>
+  </form>
+  <toast hidden="{{hiddenToast}}" duration="2000" bindchange="toastHidden">{{ToastText}}</toast>
+</view>

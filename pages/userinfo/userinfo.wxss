@@ -1,0 +1,86 @@
+/* pages/userinfo/userinfo.wxss */
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 300rpx;
+  height: 300rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.user_name_view {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.user_name_view:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.user_name_view .userinfo-nickname {
+  margin-top: 20rpx;
+  min-height: 40rpx;
+}
+
+.user_name_view .alert_name {
+  display: none;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 40rpx;
+}
+
+.user_name_view:hover .userinfo-nickname {
+  margin-top: 20rpx;
+  min-height: 40rpx;
+  border: 1px solid #b8b2b2;
+  border-width: 2rpx;
+}
+
+.user_name_view:hover .alert_name {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  line-height: 40rpx;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 200rpx;
+  margin-bottom: 5rpx;
+}
+
+.item_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.item_img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.text_pro_content {
+  margin-top: 20rpx;
+}

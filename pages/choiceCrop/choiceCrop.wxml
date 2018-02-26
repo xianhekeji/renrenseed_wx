@@ -1,0 +1,75 @@
+<!--searchCrop.wxml-->
+
+<view class="top_loading"></view>
+<view class="wxSearch-pancel_1" bindtap="search">
+  <button class="wxSearch-comm" placeholder="搜索">搜品种</button>
+</view>
+<view class="containsViewNopadding">
+  <scroll-view scroll-y="true" style="height: {{winHeight}}px;" scroll-into-view="{{scrollTopId}}" class="city_list">
+    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+
+      <text id="{{idx}}" class="list_tit">{{idx}}</text>
+      <block wx:for="{{cityName}}">
+        <view wx:if="{{item != '热门类别'}}">
+          <view bindtap='onclickList' id='{{item.name}}' class="item_view_text">
+            <image class=" item_image " style="height: 80rpx;width:80rpx;vertical-align: middle; " src="https://www.renrenseed.com/files/categoryImgs/{{item.variety_icon}} "></image>
+            <view class="list_con">{{item.name}}</view>
+            <view class="list_con" wx:if="{{item.arrvarietyname}}">({{item.arrvarietyname}})</view>
+          </view>
+        </view>
+        <view wx:if="{{item == '热门类别'}}">
+          <scroll-view scroll-x="true" class="col3-img-list">
+            <view id="{{item.varietyname}}" wx:for="{{list}}" class="listview" bindtap="onclickList">
+              <view class="item_class">
+                <image class="icon_img" src="{{constUrl}}files/categoryImgs/{{item.variety_icon}}"></image>
+                <text class="text">{{item.varietyname}}</text>
+              </view>
+            </view>
+          </scroll-view>
+          <view class="divLine_big"></view>
+          <view id="1" class="condition_view" bindtap="menu_search">
+            <text id="1" class="text_condition">条件搜种</text>
+            <text class="count">共{{CountData}}品种</text>
+            <text id="1" class="text_arrow">></text>
+          </view>
+          <view class="divLine_big"></view>
+          <view class="item_menu containsView">
+            <view class="item_left">
+              <view class="left_v"></view>
+              <text class="item_title" class="item_text">类别索引</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </block>
+  </scroll-view>
+  <!--城市选择列表-->
+  <view class="scroll_list" bindtouchstart="chStart" bindtouchend="chEnd" catchtouchmove="chMove" style="background: rgba(0,0,0,{{trans}});">
+    <block wx:for="{{city}}" wx:for-index="idx" wx:for-item="cityName">
+      <!-- <block wx:if="{{idx == '热门类别'}}" class="remen">
+        <view class="item_menu containsView">
+          <view class="item_left">
+            <view class="left_v"></view>
+            <text class="item_title" class="item_text">热</text>
+          </view>
+        </view>
+      </block> -->
+      <block wx:if="{{idx != '热门类别'}}">
+        <view id="{{idx}}" class="scroll_list_chi" style="line-height:{{lineHeight}}px ; height:{{lineHeight}}px ;font-size:{{lineHeight/1.7}}px;" bindtouchstart="getWords" bindtouchend="setWords">{{idx}}</view>
+      </block>
+    </block>
+  </view>
+
+  <!--选择显示-->
+  <view hidden="{{hidden}}" class="showwords">
+    {{showwords}}
+  </view>
+  <!-- <view class="hot_class containsViewNopadding">
+    <import src="../../wxSortPickerView/wxSortPickerView.wxml" />
+    <template is="wxSortPickerView" data="{{wxSortPickerData}}" />
+  </view> -->
+</view>
+<loading hidden="{{hiddenLoading1}}">正在加载</loading>
+<loading hidden="{{hiddenLoading2}}">正在加载</loading>
+<loading hidden="{{hiddenLoading3}}">正在加载</loading>

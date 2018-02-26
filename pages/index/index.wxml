@@ -1,0 +1,124 @@
+<!--index.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="top_loading"></view>
+<view class="wxSearch-pancel_1">
+  <view class="reset_location" bindtap="resetLocation">
+    <image class="loc_img_top" src="../../images/loc_top.png"></image>
+    <text class="location_city">{{loaction_city}}</text>
+  </view>
+  <button class="wxSearch-comm" placeholder="搜索" bindtap="search">搜品种</button>
+</view>
+<view class="containsView">
+  <!--热评品种-->
+  <view class="item_menu">
+    <view class="item_left">
+      <view class="left_v"></view>
+      <text class="item_title">最新点评</text>
+    </view>
+    <text id="1" class="item_more" bindtap="onclickMore">更多></text>
+  </view>
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.CropId}}" wx:for="{{hot_list}}" class="listview" bindtap="onclickList">
+      <view class="item_content">
+        <!-- <image class="image" src="{{constUrl}}files/cropImgs/{{item.img[0]}}"></image> -->
+        <view class="image" style="background-image:url({{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}})">
+          <image wx:if="{{item.CropStatus=='2'}}" class='statu_img' src='/images/statu_dengji.png'></image>
+          <image wx:if="{{item.CropStatus=='1'}}" class='statu_img' src='/images/statu_shenhe.png'></image>
+          <image wx:if="{{item.CropStatus!='1'&&item.CropStatus!='2'}}" class='statu_img'></image>
+        </view>
+        <text class="text">{{item.category_1}} {{item.category_2}}</text>
+        <view class="en_name">
+          <image wx:if="{{item.CropVipStatus!=0}}" class='crop_status_img' src='/images/lgz.gif'></image>
+          <text class="text_name">{{item.VarietyName}}</text>
+        </view>
+        <template is="rating-template" data="{{item}}" />
+        <view wx:if="{{item.pro}}" class="text_pro_content">
+          <text>适宜</text>
+          <image class="loc_img" src="../../images/loc.png"></image>
+          <text class="text_pro">{{item.pro}}</text>
+          <text>种植</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_Menu"></view>
+  <!--推荐品种-->
+  <view class="item_menu">
+    <view class="item_left">
+      <view class="left_v"></view>
+      <text class="item_title">推荐品种</text>
+    </view>
+    <text id="2" class="item_more" bindtap="onclickMore">更多></text>
+  </view>
+
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.CropId}}" wx:for="{{tuijian_list}}" class="listview" bindtap="onclickList">
+      <view class="item_content">
+        <!-- <image class="image" src="{{constUrl}}files/cropImgs/{{item.img[0]}}"></image> -->
+        <view class="image" style="background-image:url({{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}})">
+          <image wx:if="{{item.CropStatus=='2'}}" class='statu_img' src='/images/statu_dengji.png'></image>
+          <image wx:if="{{item.CropStatus=='1'}}" class='statu_img' src='/images/statu_shenhe.png'></image>
+        </view>
+        <text class="text">{{item.category_1}} {{item.category_2}}</text>
+        <view class="en_name">
+          <image wx:if="{{item.CropVipStatus!=0}}" class='crop_status_img' src='/images/lgz.gif'></image>
+          <text class="text_name">{{item.VarietyName}}</text>
+        </view>
+        <template is="rating-template" data="{{item}}" />
+
+        <view wx:if="{{item.pro}}" class="text_pro_content">
+          <text>适宜</text>
+          <image class="loc_img" src="../../images/loc.png"></image>
+          <text class="text_pro">{{item.pro}}</text>
+          <text>种植</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_Menu"></view>
+  <!--最新品种-->
+  <view class="item_menu">
+    <view class="item_left">
+      <view class="left_v"></view>
+      <text class="item_title">最新品种</text>
+    </view>
+    <text id="3" class="item_more" bindtap="onclickMore">更多></text>
+  </view>
+
+  <scroll-view scroll-x="true" class="col3-img-list">
+    <view id="{{item.CropId}}" wx:for="{{zuixin_list}}" class="listview" bindtap="onclickList">
+
+      <view class="item_content">
+        <!-- <image class="image" src="{{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}}"></image> -->
+        <view class="image" style="background-image:url({{isCrop==1?constUrl+'files/categoryImgs/'+item.img[0]:constUrl+'files/cropImgs/'+item.img[0]}})">
+          <image wx:if="{{item.CropStatus=='2'}}" class='statu_img' src='/images/statu_dengji.png'></image>
+          <image wx:if="{{item.CropStatus=='1'}}" class='statu_img' src='/images/statu_shenhe.png'></image>
+        </view>
+
+
+
+        <text class="text">{{item.category_1}} {{item.category_2}}</text>
+        <view class="en_name">
+          <image wx:if="{{item.CropVipStatus!=0}}" class='crop_status_img' src='/images/lgz.gif'></image>
+          <text class="text_name">{{item.VarietyName}}</text>
+        </view>
+
+        <template is="rating-template" data="{{item}}" />
+
+        <view wx:if="{{item.pro}}" class="text_pro_content">
+          <text>适宜</text>
+          <image class="loc_img" src="../../images/loc.png"></image>
+          <text class="text_pro">{{item.pro}}</text>
+          <text>种植</text>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="divLine_Menu"></view>
+</view>
+<loading hidden="{{hiddenLoading1}}">正在加载</loading>
+<loading hidden="{{hiddenLoading2}}">正在加载</loading>
+<loading hidden="{{hiddenLoading3}}">正在加载</loading>
+<modal hidden="{{addresshidden}}" title="位置切换" confirm-text="立即更换" cancel-text="暂不更换" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+  {{qiehuandata}}
+</modal>

@@ -1,0 +1,60 @@
+/* pages/areaSelect/areaSelect.wxss */
+
+page {
+  background-color: #EDEDED;
+}
+
+.v_gps {
+  height: 100rpx;
+  background: white;
+  width: 100%;
+  margin-top: 30rpx;
+  line-height: 100rpx;
+}
+
+.loc_province {
+  color: black;
+  font-size: 40rpx;
+  margin-left: 10rpx;
+}
+
+.loc_lint {
+  margin-left: 10rpx;
+  font-size: 30rpx;
+}
+
+.v_log {
+  margin-top: 30rpx;
+}
+
+.v_log_content {
+  margin-top: 30rpx;
+}
+
+.v_all_province {
+  margin-top: 30rpx;
+}
+.all_lint{
+  margin-left: 10rpx;
+}
+.v_all_content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item_province {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-top: 20rpx;
+  height: 80rpx;
+  background: white;
+  line-height: 80rpx;
+  min-width: 200rpx;
+  max-width: 200rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

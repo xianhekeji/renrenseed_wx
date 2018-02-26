@@ -1,0 +1,86 @@
+@import "/pages/movie-rating/movie-rating-template.wxss";
+
+.class_item {
+  width: 80rpx;
+}
+
+.top_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item {
+  min-height: 60rpx;
+  height: 60rpx;
+}
+
+.image {
+      display: flex;
+  width: 220rpx;
+  height: 220rpx;
+  margin: 10rpx;
+  flex-direction: row-reverse;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.col3-img-list {
+  white-space: wrap;
+  display: flex;
+  flex-direction: row;
+}
+
+/*.listview {
+  display: inline-block;
+}*/
+
+.item_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.text_content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.text_name {
+  font-weight: bold;
+}
+
+.reset_location {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.loc_img_top {
+  width: 10px;
+  height: 15px;
+  margin-left: 10rpx;
+}
+
+.location_city {
+  color: white;
+  min-width: 80rpx;
+  white-space: nowrap;
+  margin-right: 10rpx;
+}
+
+.statu_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 2rpx;
+  margin-top: 2rpx;
+}

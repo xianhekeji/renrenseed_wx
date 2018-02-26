@@ -1,0 +1,387 @@
+/**app.wxss**/
+
+/*整体view样式*/
+
+.containsView {
+  padding: 15rpx 15rpx 15rpx 15rpx;
+  margin-top: 1rpx;
+  margin-bottom: 10rpx;
+  background-color: white;
+}
+
+.containsViewNopadding {
+  /*padding: 15rpx 15rpx 15rpx 15rpx;*/
+  margin-top: 1rpx;
+  /*margin-bottom: 100rpx;*/
+  background-color: white;
+}
+
+.containsViewBottom {
+  /*padding: 15rpx 15rpx 15rpx 15rpx;*/
+  margin-top: 1rpx;
+  margin-bottom: 100rpx;
+  background-color: white;
+}
+
+/*底部view整体样式*/
+
+.bottomView {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*每个Item样式*/
+
+.bottomItemView {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+
+/*Item样式中的图标样式 顶 踩 分享 评论*/
+
+.bottomItemImage {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+/*Item中的文字样式  顶 踩 分享 评论*/
+
+.bottomItemText {
+  font-size: 23rpx;
+  color: #b8b2b2;
+  margin-left: 10rpx;
+  margin-top: 8rpx;
+}
+
+.strSearch {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.menu_icon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.menu_text {
+  height: 60rpx;
+  text-align: center;
+}
+
+.menu_btn_view {
+  height: 100rpx;
+  margin-top: 1rpx;
+  margin-bottom: 1rpx;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  border-style: solid;
+  border-width: 1px;
+  justify-content: space-between;
+}
+
+.menu_btn {
+  height: 100rpx;
+  margin-left: 10rpx;
+  text-align: left;
+}
+
+.right_arrow {
+  height: 80rpx;
+  margin-top: 10rpx;
+  width: 50rpx;
+  margin-right: 10rpx;
+}
+
+.check_view {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.navbar {
+  flex: none;
+  display: flex;
+  background: #fff;
+}
+
+.navbar .item {
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.navbar .item.active {
+  color: #056bb8;
+}
+
+.navbar .item.active:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+  background: #056bb8;
+}
+
+/*分割线样式*/
+
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 5rpx;
+}
+
+.divLine_Menu {
+  margin-top: 20rpx;
+  background: #f3f3f3;
+  width: 100%;
+  height: 20rpx;
+}
+
+.divSmallLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 1rpx;
+}
+
+.wxSearch-pancel_1 {
+  background-color: #056bb8;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+
+.wxSearch-comm {
+  background-color: #fff;
+  width: 100%;
+  height: 70rpx;
+  /*font-size: 30rpx;*/
+  line-height: 70rpx;
+  border-radius: 1;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+/*评论功能样式*/
+
+.wxInput-section {
+  position: fixed;
+  bottom: 0rpx;
+  background-color: #fff;
+  width: 100%;
+}
+
+.wxInput-pancel {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+
+.wxInput-input {
+  flex: 8;
+  background-color: #eee;
+  padding: 5px 10px;
+}
+
+.wxInput-button {
+  flex: 1;
+  border: none !important;
+  color: cornflowerblue !important;
+}
+
+.view_commodity {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 130rpx;
+}
+
+.image_commodity {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 5rpx;
+  align-content: center;
+}
+
+.commodity_content {
+  display: flex;
+  flex-direction: column;
+  height: 130rpx;
+  margin-left: 10rpx;
+}
+
+.addImage {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.view_hide {
+  display: none;
+}
+
+.view_show {
+  display: block;
+}
+
+/*text begin*/
+
+.text_name {
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.text_title {
+  color: #000;
+  line-height: 50rpx;
+  margin-top: 10rpx;
+}
+
+.crop_name {
+  color: #000;
+  font-weight: bold;
+}
+
+.crop_content {
+  color: #000;
+  margin-top: 10rpx;
+}
+
+/*text end*/
+
+.bottom_button {
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  color: white;
+  background-color: #056bb8;
+  font-size: bold;
+  /*margin-left: 20rpx;
+  margin-right: 20rpx;*/
+}
+
+.text_pro {
+  color: #056bb8;
+}
+
+.text_pro_content {
+  font-size: 30rpx;
+  display: flex;
+  flex: row;
+  flex-wrap: nowrap;
+}
+
+.loading {
+  padding: 10rpx;
+  text-align: center;
+}
+
+.loading:before {
+  display: inline-block;
+  margin-right: 5rpx;
+  vertical-align: middle;
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  /*background: url(../index/images/icon-loading.png) no-repeat; */
+  background-size: contain;
+  animation: rotate 1s linear infinite;
+}
+
+.loading.complete:before {
+  display: none;
+}
+
+.scroll {
+  height: 500px;
+}
+
+.top_loading {
+  width: 100%;
+  height: 200rpx;
+  position: fixed;
+  top: 0;
+  background-color: #056bb8;
+  z-index: -100000;
+}
+
+.loc_img {
+  width: 10px;
+  height: 15px;
+}
+
+.item_avatar {
+  height: 80rpx;
+  width: 80rpx;
+  vertical-align: middle;
+  border-radius: 100rpx;
+}
+
+.rat_view {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  width: 100%;
+}
+
+.divLine_big {
+  height: 20rpx;
+  background: #f3f3f3;
+  width: 100%;
+}
+
+.divLine_white {
+  height: 5rpx;
+  background: #fff;
+  width: 100%;
+}
+
+.comment_content {
+  margin-top: 10rpx;
+  text-align: justify;
+}
+
+.crop_status_img {
+  width: 45rpx;
+  height: 45rpx;
+  max-width: 45rpx;
+  max-height: 45rpx;
+}
+
+.en_name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.video_class {
+  width: 100%;
+  margin-top: 15rpx;
+}
+
+.time {
+  color: #ababab;
+  margin-top: 10rpx;
+}
+
+.address_class {
+  font-size: 30rpx;
+}

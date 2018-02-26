@@ -1,0 +1,124 @@
+<view class="containsView">
+  <view class="authorizeInfo" wx:if="{{data.AuFlag==2}}">
+    <!--退出原因-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">退出原因</text>
+      </view>
+    </view>
+    <text class="item_content">{{data.FlagReason}}</text>
+    <view class="divLine"></view>
+  </view>
+  <view class="authorizeInfo" wx:if="{{data.AuFlag!=2}}">
+    <view class="divLine"></view>
+    <!--审定编码-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">审定编码</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.AuthorizeNumber}}</text>
+    <view class="divLine"></view>
+    <!--品种名称-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">品种名称</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.AuCropName}}</text>
+    <view class="divLine"></view>
+    <!--审定年份-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">审定年份</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.AuthorizeYear}}</text>
+    <view class="divLine"></view>
+    <!--育种单位-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">育种单位</text>
+      </view>
+    </view>
+    <text class="item_content">{{data.BreedOrganization}}</text>
+    <view class="divLine"></view>
+    <!--品种来源-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">品种来源</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.VarietySource}}</text>
+    <view class="divLine"></view>
+    <!--特征特性-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">特征特性</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.Features}}</text>
+    <view class="divLine"></view>
+    <!--抗性表现-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">抗性表现</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.AuKangxing}}</text>
+    <view class="divLine"></view>
+    <!--品质表现-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">品质表现</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.AuPinzhi}}</text>
+    <view class="divLine"></view>
+    <!--实验产量-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">试验产量</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.Production}}</text>
+    <view class="divLine"></view>
+    <!--栽培技术-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">栽培技术</text>
+      </view>
+    </view>
+
+    <text class="item_content">{{data.BreedSkill}}</text>
+    <view class="divLine"></view>
+    <!--适宜地区-->
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title">适宜地区</text>
+      </view>
+    </view>
+    <text class="item_content">{{data.BreedRegion}}</text>
+    <view class="divLine"></view>
+  </view>
+</view>

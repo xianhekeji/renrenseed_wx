@@ -1,0 +1,34 @@
+<!--pages/sendKoubei/sendKoubei.wxml-->
+<view class="containsViewBottom">
+  <view class="content">
+    <view class="divLine_Menu"></view>
+    <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*100}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+        <view class="item" style="left:75rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+      </image>
+    </block>
+    <text class="star_text">{{star_text}}</text>
+    <view style="margin-top: 100rpx;">
+      <view class="divLine_Menu"></view>
+      <textarea class="input_content" type="text" id="input_content" bindblur="bindChange" bindinput="bindChange" name="input_content" placeholder="品种的产量如何，表现怎么样？（20字以上200字以内）" maxlength="200"></textarea>
+    </view>
+    <view class="divLine_Menu"></view>
+    <view class="item_img_view">
+      <view id="{{item}}" wx:for="{{tempFilePaths}}" wx:key="{{tempFilePaths}}">
+        <view class="content_img">
+          <image class="item_img" id="{{item.url}}" bindtap="previewImg" src="{{item.url }}" mode="aspecFill" />
+          <text>{{item.pro}}</text>
+          <text id="{{item.id}}" bindtap='delImg' class="del_img">删除</text>
+        </view>
+      </view>
+      <image class="addImage" src="../../images/add_img.png" bindtap="chooseimage" />
+    </view>
+    <view class="xuzhi_view">
+      <text class="xuzhi_text" bindtap="xuzhi">点评须知(点击查看)</text>
+    </view>
+    <!--<view class="divLine_Menu"></view>-->
+    <button class="bottom_button" id="addnew" bindtap="addnew" value="发布">发布</button>
+  </view>
+  <toast hidden="{{hiddenToast}}" duration="2000" bindchange="toastHidden">{{ToastText}}</toast>
+</view>

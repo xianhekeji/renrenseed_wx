@@ -1,0 +1,156 @@
+/* pages/moreEnterpriseCrop/moreEnterpriseCrop.wxss */
+@import "/pages/movie-rating/movie-rating-template.wxss";
+
+.class_item {
+  width: 80rpx;
+}
+
+.top_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.item {
+  min-height: 60rpx;
+  height: 60rpx;
+}
+
+.image {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 10rpx;
+}
+
+.col3-img-list {
+  white-space: wrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.listview {
+  margin-top: 80rpx;
+}
+
+.item_content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.text_content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+}
+
+.text_name {
+  font-weight: bold;
+}
+
+.fenlei_view {
+  height: 80rpx;
+  margin-top: 20rpx;
+  width: 100%;
+  /* background: #D4D4D4; */
+  line-height: 80rpx;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.class_text {
+  margin-left: 20rpx;
+}
+
+.condition {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #d4d4d4;
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  align-items: center;
+  position: fixed;
+  top: 0rpx;
+  background: #769ab9;
+  filter: alpha(Opacity=80);
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+.jiange_line {
+  width: 5rpx;
+  background: #d4d4d4;
+  height: 80rpx;
+}
+
+.view_1 {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.pciker_class {
+  width: 30%;
+  text-align: center;
+}
+
+.authorize_item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.condition_brand_view {
+  display: flex;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.au_class {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 80rpx;
+}
+
+.brand_avatar {
+  height: 80rpx;
+  width: 80rpx;
+  vertical-align: middle;
+}
+
+.text_arrow {
+  margin-right: 20rpx;
+  font-size: 30px;
+}
+.top_line{
+  margin-top: 90rpx;
+}
+.item_img_view {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item_img {
+  height: 180rpx;
+  width: 180rpx;
+  margin: 5rpx;
+}

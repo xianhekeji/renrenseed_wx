@@ -1,0 +1,34 @@
+<!--pages/moreDistributorKoubei/moreDistributorKoubei.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<view class="containsViewBottom">
+  <view class="containsView">
+    <view class="item_menu">
+      <view class="item_left">
+        <view class="left_v"></view>
+        <text class="item_title" class="item_text">种友点评</text>
+      </view>
+      <text id="1" class="item_more" bindtap="sendKoubei">写点评</text>
+    </view>
+    <view class="divLine"></view>
+    <view id="{{item.CommentRecrodId}}" wx:for="{{koubeiList}}" wx:key="CommentRecrodId" class="authorize_item" bindtap="onClickKoubeiList">
+      <view class="item_view">
+        <image class="item_avatar" src="{{item.UserAvatar}}" mode="aspectFill"></image>
+        <view class="item_content">
+          <view class="item_view" style="margin-left:10rpx;">
+            <text class="user_name">{{item.UserName}}</text>
+            <template is="rating-template" data="{{item}}" />
+          </view>
+          <view class="comment_content" style="margin-left:10rpx;">{{item.CommentRecordCreateTime}}</view>
+          <view class="comment_content" style="margin-left:10rpx;">{{item.CommentComment}}</view>
+          <view class="item_img_view">
+            <view wx:for="{{item.CommentImgs}}" wx:key="{{item}}">
+              <image class="item_img" wx:if="{{item.length>0}}" src="{{constUrl}}files//upload/{{item}}" mode="aspectFill"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="divLine"></view>
+    </view>
+  </view>
+  <button class="bottom_button" bindtap="sendKoubei">写点评</button>
+</view>

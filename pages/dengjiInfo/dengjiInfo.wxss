@@ -1,0 +1,44 @@
+/* pages/dengjiInfo/dengjiInfo.wxss */
+.authorizeInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.item_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.item_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.item_title {
+  margin-left: 10rpx;
+  color: #056bb8;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 10rpx;
+  margin-top: 10rpx;
+}
+
+.item_content {
+  margin-left: 20rpx;
+  text-align:justify;
+}
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 5rpx;
+  margin-top: 30rpx;
+}

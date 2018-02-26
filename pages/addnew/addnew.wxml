@@ -1,0 +1,23 @@
+<view class="containsView">
+  <view>{{tip}}</view>
+  <form bindsubmit="formBindsubmit" bindreset="formReset">
+    <view>
+      标题：
+      <input class="input_title" type="text" id="input_title" name="input_title"></input>
+    </view>
+    <view>
+      内容：
+      <input class="input_content" type="text" id="input_content" name="input_content"></input>
+    </view>
+
+    <view class="item_img_view">
+      <view wx:for="{{tempFilePaths}}" wx:key="{{tempFilePaths}}">
+        <image class="item_img" src="{{item }}" mode="aspecFill" />
+      </view>
+       <image class="addImage" src="../../images/add_img.png" bindtap="chooseimage" />
+    </view>
+    <view>
+      <button class="add" id="addnew" formType="submit" value="发布">发布</button>
+    </view>
+  </form>
+</view>

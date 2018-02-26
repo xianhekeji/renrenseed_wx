@@ -1,0 +1,29 @@
+<!--pages/sendDistributorKoubei/sendDistributorKoubei.wxml-->
+<import src="../../WeToast/wetoast.wxml" />
+<view class="containsViewBottom">
+  <view class="content">
+    <view class="divLine_Menu"></view>
+    <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*100}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <view class="item" style="left:0rpx" data-key="{{item+0.5}}" bindtap="selectLeft"></view>
+        <view class="item" style="left:75rpx" data-key="{{item+1}}" bindtap="selectRight"></view>
+      </image>
+    </block>
+    <text class="star_text">{{star_text}}</text>
+    <view style="margin-top: 100rpx;">
+      <view class="divLine_Menu"></view>
+      <textarea class="input_content" type="text" bindblur="bindChange" bindinput="bindChange" id="input_content" name="input_content" placeholder="服务质量如何，经营的品种怎么样？（200字以内）" maxlength="200"></textarea>
+    </view>
+    <view class="divLine_Menu"></view>
+    <view class="item_img_view">
+      <view id="{{item}}" bindtap="previewImg" wx:for="{{tempFilePaths}}" wx:key="{{tempFilePaths}}">
+        <image class="item_img" src="{{item }}" mode="aspecFill" />
+      </view>
+      <image class="addImage" src="../../images/add_img.png" bindtap="chooseimage" />
+    </view>
+    <button class="bottom_button" id="addnew" bindtap="addnew" value="发布">发布</button>
+  </view>
+
+  <toast hidden="{{hiddenToast}}" duration="2000" bindchange="toastHidden">{{ToastText}}</toast>
+</view>
+<template is="wetoast" data="{{...__wetoast__}}" />

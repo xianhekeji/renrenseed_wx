@@ -1,0 +1,16 @@
+<!--pages/ArticleInfo/ArticleInfo.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="containsView">
+  <view class="title">
+    <text>{{data.ArticleTitle}}</text>
+  </view>
+  <video class="video_class" wx:if="{{data.ArticleVideo}}" src='{{data.ArticleVideo}}' objectFit='cover' poster='https://www.renrenseed.com{{item.ArticleVideoPosterUrl}}' controls='true'></video>
+  <view class="label">
+    <text class="laiyuan" wx:if="{{data.ArticleVideoFrom}}">视频来源：{{data.ArticleVideoFrom}}</text>
+    <text class="time">{{data.ArticleCreateTime}}</text>
+  </view>
+  <view class="divLine" style="margin-top:20rpx;"></view>
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

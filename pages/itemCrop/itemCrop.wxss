@@ -1,0 +1,405 @@
+@import "/pages/movie-rating/movie-rating-template.wxss";
+@import "/wxParse/wxParse.wxss";
+
+.top_menu {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+.top_item_menu {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.crop_info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 80rpx;
+}
+
+.crop_info_content {
+  display: flex;
+  text-align: left;
+  /* justify-content: flex-start; */
+  flex-direction:column-reverse;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 500rpx;
+}
+
+.crop_info_item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  /*margin-top: 300rpx;*//*font-size: 11px;*/
+}
+
+.authorize_item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: flex-start;
+}
+
+.item_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.item_title {
+  margin-left: 10rpx;
+  color: #000;
+}
+
+.item_text {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.item_more {
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  color: #056bb8;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.item_view {
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.user_name {
+  line-height: 20px;
+}
+
+.item_content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  width: 80%;
+}
+
+.item_img_view {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item_img {
+  height: 180rpx;
+  width: 180rpx;
+  margin: 5rpx;
+}
+
+.condition_brand_view {
+  display: flex;
+  justify-content: space-start;
+  min-height: 80rpx;
+  line-height: 80rpx;
+}
+
+.condition_view {
+  display: flex;
+  justify-content: space-between;
+  /* height: 100rpx; */
+  line-height: 100rpx;
+}
+
+.text_arrow {
+  margin-right: 20rpx;
+  font-size: 30px;
+  align-content: center;
+  align-items: center;
+}
+
+.divLine_1 {
+  background: #c5c1aa;
+  width: 100%;
+  height: 5rpx;
+}
+
+.text_pro_name {
+  display: flex;
+  flex: row;
+  flex-wrap: nowrap;
+  margin-top: 10rpx;
+}
+
+.au_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.breedregion {
+  display: flex;
+  flex-direction: row;
+}
+
+.item_company {
+  margin-top: 10rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.v_left{
+  width: 80%;
+  min-width: 80%;
+}
+.v_right{
+  width: 20%;
+  min-width: 20%;
+}
+.call_view {
+  width: 120rpx;
+  height: 120rpx;
+  margin-top: 10rpx;
+  color: white;
+  font-size: bold;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #056bb8;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  line-height: 120rpx;
+  align-content: center;
+  justify-content: center;
+  /* margin-right: 10rpx; */
+  /*background-color: #C5C1AA;*/
+}
+
+.call {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  /* margin-left: 30rpx;
+  margin-top: 20rpx; */
+}
+
+.text_call {
+  color: #056bb8;
+  margin-left: 20rpx;
+}
+
+.text_tel {
+  color: black;
+  margin-left: 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.brand_content {
+  color: #ff7200;
+}
+
+.image {
+  width: 220rpx;
+  height: 150rpx;
+  /*border-style: solid;
+  border-width: 1px;
+  border-radius: 1;*/
+}
+
+.item_content_1 {
+  display: flex;
+  flex-direction: row;
+  /*margin-left: 10rpx;*/
+  width: 100%;
+}
+
+.title {
+  margin-left: 10rpx;
+}
+
+.bottom_content {
+  margin-left: 10rpx;
+}
+
+.text_content {
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.crop_region {
+  text-align: justify;
+}
+
+.au_class {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-height: 80rpx;
+}
+
+.text_pro_content_1 {
+  display: flex;
+  flex: row;
+  flex-wrap: nowrap;
+}
+
+.brand_avatar {
+  height: 80rpx;
+  width: 80rpx;
+  vertical-align: middle;
+}
+
+.qrcode_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.qrcode_v {
+  display: flex;
+  flex-direction: row;
+}
+
+.qrcode_title {
+  font-weight: bold;
+}
+
+.qrcode_lint {
+  color: #8c8c8c;
+}
+
+.qrcode_img {
+  width: 80rpx;
+  height: 80rpx;
+  max-height: 80rpx;
+  max-width: 80rpx;
+  margin-right: 40rpx;
+}
+
+.statu_img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+}
+
+.enterprise_status_img {
+  width: 50rpx;
+  height: 50rpx;
+  max-width: 50rpx;
+  max-height: 50rpx;
+}
+
+.en_name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.item_image {
+  width: 220rpx;
+  height: 220rpx;
+  max-height: 220rpx;
+  max-width: 220rpx;
+  margin-left: 10rpx;
+}
+
+.image_class {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.buydes-dialog-container {
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  background-color: rgba(15, 15, 26, 0.7);
+  position: fixed;
+  z-index: 999;
+}
+
+.buydes-dialog-container-top {
+  flex-grow: 1;
+}
+
+.buydes-dialog-container-bottom {
+  display: flex;
+  flex-grow: 0;
+  background: #fff;
+}
+
+.buydes-dialog-container-bottom-item {
+  padding: 24rpx;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+.container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.company_info {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.company_info .item_content {
+  min-height: 120rpx;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+}
+
+.company_info .item_content_video {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.company_info .item_content_1 {
+  min-height: 120rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.company_info .avatar {
+  width: 220rpx;
+  height: 150rpx;
+}
+
+.company_info .content {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

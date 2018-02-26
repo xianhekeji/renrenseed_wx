@@ -1,0 +1,39 @@
+<!--/pages/searchCompany/searchCompany.wxml-->
+<import src="/pages/movie-rating/movie-rating-template.wxml" />
+<import src="/wxSearch/wxSearch.wxml" />
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel">
+    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜企业" confirm-type="search" bindconfirm="wxSearchFn" />
+    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+  </view>
+</view>
+<!--<template is="wxSearch" data="{{wxSearchData}}" />-->
+<view class="container">
+  <view id="{{item.EnterpriseId}}" class="item" wx:for="{{list}}" bindtap="onclickList">
+    <view class="item_content">
+      <image class="avatar" src="{{constUrl}}/wxApi/getEnterpriseAvatar.php?id={{item.EnterpriseId}}"></image>
+      <view class="item_content_1">
+        <view class="content">
+          <view class="en_name">
+            <image wx:if="{{item.EnterpriseLevel!=0}}" class='enterprise_status_img' src='/images/lgz.gif'></image>
+            <text class="text_name" id="{{item.EnterpriseId}}">{{item.EnterpriseName}}</text>
+          </view>
+          <view class="rat_view">
+            <template is="rating-template" data="{{item}}" />
+          </view>
+          <text id="{{item.EnterpriseId}}">{{item.EnterpriseProvince}}{{item.EnterpriseAddressDetail}}</text>
+        </view>
+        <!-- <view class='item_right'>
+            <image class="call" id="{{item.DistributorTelephone}}" src="../../images/call.png" bindtap="makeCall"></image>
+            <text style="margin-right:10rpx;margin-top:5rpx;" id="{{item.DistributorId}}" bindtap="onclickList">{{item.distanceKM}}</text>
+          </view> -->
+      </view>
+    </view>
+    <view class="divLine"></view>
+  </view>
+
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+  <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+
+</view>
+<loading hidden="{{hiddenLoading}}">正在搜索</loading>

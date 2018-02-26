@@ -1,0 +1,23 @@
+
+<import src="/wxSearch/wxSearch.wxml"/>
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel">
+    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
+    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+  </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}"/>
+<view class="container">
+    <view id="{{item.id}}" class="item" wx:for="{{list}}">  
+        <view class="text">
+        <text class="content">{{item.title}}</text>
+        <view class="item_img_view">
+          <view wx:for="{{item.url}}">
+            <image class="item_img" wx:if="{{item.length>0}}" src="https://www.seed168.com/mobileinterface/upload/{{item}}" mode="aspectFit"></image>
+          </view>
+        </view>
+        <input class="pinglun" value="评论"></input>
+      </view>
+	  <view class="divLine"></view>
+      </view>
+</view>

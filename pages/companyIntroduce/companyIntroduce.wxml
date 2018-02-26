@@ -1,0 +1,11 @@
+<!--pages/companyIntroduce/companyIntroduce.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class="containsView">
+  <view class="title">
+    <text>{{data.ArticleTitle}}</text>
+  </view>
+  <view class="divLine" style="margin-top:20rpx;"></view>
+  <view class="content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>

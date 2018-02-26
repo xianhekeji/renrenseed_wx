@@ -1,0 +1,16 @@
+<template name="rating-template">
+  <view wx:if="{{item}}">
+    <view class="rating">
+      <view class="rating-star allstar{{item.CropLevel | 0}} "></view>
+      <text class="rating-average"></text>
+      <!--<text class="rating-average">{{item.CropLevel}}</text>-->
+    </view>
+  </view>
+  <view wx:elif="{{data}}">
+    <view class="rating">
+      <view class="rating-star allstar{{data.CropLevel | 0}} "></view>
+      <text class="rating-average"></text>
+      <!--<text class="rating-average">{{item.CropLevel}}</text>-->
+    </view>
+  </view>
+</template>

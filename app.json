@@ -1,0 +1,83 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/itemNew/itemNew",
+    "pages/choiceCrop/choiceCrop",
+    "pages/articleList/articleList",
+    "pages/articleListnew/articleListnew",
+    "pages/cropList/cropList",
+    "pages/itemCrop/itemCrop",
+    "pages/ArticleInfo/ArticleInfo",
+    "pages/conditionCrop/conditionCrop",
+    "pages/searchNew/searchNew",
+    "pages/searchCrop/searchCrop",
+    "pages/authorizeInfo/authorizeInfo",
+    "pages/companyList/companyList",
+    "pages/searchCompany/searchCompany",
+    "pages/pinglun/pinglun",
+    "pages/comment2List/comment2List",
+    "pages/sendKoubei/sendKoubei",
+    "pages/sendKoubei2/sendKoubei2",
+    "pages/userinfo/userinfo",
+    "pages/addnew/addnew",
+    "pages/itemCommodity/itemCommodity",
+    "pages/companyInfo/companyInfo",
+    "pages/varietyCrop/varietyCrop",
+    "pages/sendDistributorKoubei/sendDistributorKoubei",
+    "pages/moreDistributorKoubei/moreDistributorKoubei",
+    "pages/conditionCropResult/conditionCropResult",
+    "pages/sendCompanyKoubei2/sendCompanyKoubei2",
+    "pages/showImg/showImg",
+    "pages/dengjiInfo/dengjiInfo",
+    "pages/moreEnterpriseCrop/moreEnterpriseCrop",
+    "pages/alertAvatar/alertAvatar",
+    "pages/xuzhiInfo/xuzhiInfo",
+    "pages/areaSelect/areaSelect",
+    "pages/companyIntroduce/companyIntroduce"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#056bb8",
+    "navigationBarTitleText": "人人种品种大全",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#056bb8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/icon_main_checked.png",
+        "iconPath": "images/icon_main.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/article_checked.png",
+        "iconPath": "images/article.png",
+        "pagePath": "pages/articleListnew/articleListnew",
+        "text": "资讯"
+      },
+      {
+        "selectedIconPath": "images/main_mes_checked.png",
+        "iconPath": "images/main_mes.png",
+        "pagePath": "pages/companyList/companyList",
+        "text": "名录"
+      },
+      {
+        "selectedIconPath": "images/search_crop_checked.png",
+        "iconPath": "images/search_crop.png",
+        "pagePath": "pages/choiceCrop/choiceCrop",
+        "text": "搜品种"
+      },
+      {
+        "selectedIconPath": "images/user_main_checked.png",
+        "iconPath": "images/user_main.png",
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "我"
+      }
+    ]
+  }
+}

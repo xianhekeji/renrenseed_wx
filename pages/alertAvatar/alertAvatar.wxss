@@ -1,0 +1,4 @@
+/* pages/alertAvatar/alertAvatar.wxss */
+.img{
+align-items: center;
+}

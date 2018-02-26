@@ -1,0 +1,66 @@
+/* pages/moreDistributorKoubei/moreDistributorKoubei.wxss */
+@import "/pages/movie-rating/movie-rating-template.wxss";
+.item_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.item_title {
+  margin-left: 10rpx;
+  color: #000;
+}
+
+.item_text {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.item_more {
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  color: #056bb8;
+}
+
+.item_view {
+margin-top: 10rpx;
+margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.user_name {
+  line-height: 20px;
+}
+.item_content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+  width: 80%;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+.item_img_view {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.item_img {
+  height: 180rpx;
+  width: 180rpx;
+  margin: 5rpx;
+}

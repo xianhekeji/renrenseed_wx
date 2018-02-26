@@ -1,0 +1,56 @@
+/* pages/articleList/articleList.wxss */
+@import "/pages/movie-rating/movie-rating-template.wxss";
+
+.avatar {
+  width: 220rpx;
+  height: 150rpx;
+}
+
+.item_content {
+  min-height: 120rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+}
+
+.item_content_1 {
+  min-height: 120rpx;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
+  margin-left: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.item_more {
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  color: #056bb8;
+}
+
+.call {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 3rpx;
+
+}
+
+.item_right {
+  display: flex;
+  flex-direction: column;
+}
+

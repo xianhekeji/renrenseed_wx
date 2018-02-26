@@ -1,0 +1,2 @@
+<!--pages/itemCommodity/itemCommodity.wxml-->
+<text>{{data.CommodityName}}</text>

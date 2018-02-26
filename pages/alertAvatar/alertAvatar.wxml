@@ -1,0 +1,6 @@
+<!--pages/alertAvatar/alertAvatar.wxml-->
+<view class="container">
+  <image bindtap="alertImg" src="{{UserAvatar}}"></image>
+  <button class="bottom_button" wx:if="{{isShow}}" id="updateAvatar" bindtap="updateAvatar" value="更新头像">更新头像</button>
+</view>
+<toast hidden="{{hiddenToast}}" duration="2000" bindchange="toastHidden">{{ToastText}}</toast>

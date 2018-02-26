@@ -1,0 +1,3 @@
+<!--pages/showImg/showImg.wxml-->
+
+<image class="img" src="{{url}}" mode="widthFix"></image>

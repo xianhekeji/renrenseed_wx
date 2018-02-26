@@ -1,0 +1,41 @@
+.input_title {
+  height: 60rpx;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.input_content {
+  height: 200rpx;
+  min-height: 200rpx;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.add {
+  margin-top: 10rpx;
+}
+
+.item_img_view {
+  display: flex;
+  flex-direction: row;
+  padding-left: 5rpx;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10rpx;
+  flex-wrap: wrap;
+}
+
+.item_img {
+  min-height: 200rpx;
+  width: 200rpx;
+  max-height: 200rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  border-radius: 10px;
+  padding-top: 0rpx;
+}
+
+.addImage {
+  width: 100rpx;
+  height: 100rpx;
+}

@@ -1,0 +1,11 @@
+/* pages/itemNew/itemNew.wxss */
+
+.item_comment{
+  display: flex;
+  flex: row;
+}
+.wx-button {
+
+  border: none !important;
+  color: cornflowerblue !important;
+}

@@ -1,0 +1,98 @@
+/**index.wxss**/
+@import "/pages/movie-rating/movie-rating-template.wxss";
+
+.item_menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.item_left {
+  display: flex;
+  flex-direction: row;
+}
+
+.item_title {
+  margin-left: 10rpx;
+  color: #056bb8;
+  font-weight: bold;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.item_text {
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.item_more {
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+  color: #056bb8;
+}
+
+.col3-img-list {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.listview {
+  display:inline-block;
+}
+
+.item_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+}
+
+.left_v {
+  background-color: #056bb8;
+  width: 5rpx;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.loc_img_top {
+  width: 10px;
+  height: 15px;
+  margin-left: 10rpx;
+}
+
+.location_city {
+  color: white;
+  min-width: 80rpx;
+  white-space: nowrap;
+  margin-right: 10rpx;
+}
+
+.reset_location {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.image {
+  display: flex;
+  width: 220rpx;
+  height: 220rpx;
+  max-width: 220rpx;
+  max-height: 220rpx;
+  margin: 10rpx;
+  flex-direction:row-reverse;
+  background-repeat: no-repeat;
+
+
+}
+
+.statu_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 2rpx;
+  margin-top: 2rpx;
+}
